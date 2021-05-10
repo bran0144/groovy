@@ -1,4 +1,3 @@
-def myOpportunity = 5000
 
 switch(myOpportunity) {
   case 0..999:

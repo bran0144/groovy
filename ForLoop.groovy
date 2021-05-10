@@ -8,8 +8,8 @@ int totalOpportunity = 0
 List opportunities = [opportunity1, opportunity2, opportunity3, opportunity4, opportunity5]
 
 
-for (int i=0; i < opportunities.size; i++){
-  println "Found an opportunity of ${opportunities[i]}"
-  totalOpportunity += opportunities[i]
+for (int opportunity in opportunities){
+  println "Found an opportunity of ${opportunity}"
+  totalOpportunity += opportunity
   println "Total opportunity is now $totalOpportunity"
 }

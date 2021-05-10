@@ -5,4 +5,4 @@ email.emailAddress = "joe@leakypipes.com"
 email.sendDate = new Date()
 email.notes = "Sent Joe a list of pricing options for his spring ad campaign"
 
-email.displayContent()
+println email.displayContent()

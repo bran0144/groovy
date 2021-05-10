@@ -4,7 +4,7 @@ class Email {
   Date sendDate
   String notes
 
-  def displayContent() {
-    println "Recipient: $prospectName\nAddress: $emailAddress\nDate: $sendDate\nSummary: $notes"
+  String displayContent() {
+    return "Recipient: $prospectName\nAddress: $emailAddress\nDate: $sendDate\nSummary: $notes"
   }
 }

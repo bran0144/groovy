@@ -1,3 +1,4 @@
+int myOpportunity = 50000
 
 switch(myOpportunity) {
   case 0..999:

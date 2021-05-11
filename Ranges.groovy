@@ -1,4 +1,3 @@
-def numbers = 1..10
-for (num in numbers) {
-  println num
-}
+def range = 'a'..'g'
+for (var in range) {
+  println var

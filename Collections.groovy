@@ -1,4 +1,5 @@
 def beatles = ["John", "Paul", "George", "Ringo"]
-for (int i=0; i < beatles.size(); i++) {
-  println "Hello, " + beatles[i]
+for (beatle in beatles) {
+  def greeting = "Hello, "
+  println "$greeting" + "$beatle"
 }

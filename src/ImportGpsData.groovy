@@ -11,8 +11,8 @@ println ''
 println gpx.@version
 println gpx.@creator
 
-for (point in gpx.rte.rtept) {
-  println point.@Lat
-  println point.@Lon
-  println point.time
+gpx.rte.rtept.each {
+  println it.@Lat
+  println it.@Lon
+  println it.time
 }

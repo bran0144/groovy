@@ -12,5 +12,12 @@ class BankAccount {
       throw new InsufficientFundsException()
     balance -= amount
   }
+  def void accrueInterest() {
+    def service = new InterestRateService()
+    def rate = service.getInterestRate()
+
+    def accruedInterest = balance * rate
+    deposit(accruedInterest)
+    }
 
 }

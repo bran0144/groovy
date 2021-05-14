@@ -8,6 +8,9 @@ class BankAccount {
     balance += amount
   }
   def void withdrawl(amount) {
+    if (amount > balance)
+      throw new Exception()
     balance -= amount
   }
+
 }

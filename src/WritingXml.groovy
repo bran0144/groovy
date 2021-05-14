@@ -5,10 +5,11 @@ def gpx = slurper.parse(inFile)
 def markupBuilder = new groovy.xml.StreamingMarkupBuilder()
 def xml = markupBuilder.bind{
   route {
+    mkp.comment(gpx.name)
     gpx.rte.rtept.each {point ->
       routepoint(timestmap: point.time.toString()){
-        latitude(point.@Lat)
-        longitute(point.@Lon)
+        latitude(point.@lat)
+        longitute(point.@lon)
     }
   }
   }

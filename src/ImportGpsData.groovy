@@ -1,8 +1,3 @@
-@Grab(group='joda-time', module='joda-time', version='2.10.9')
-
-import org.joda.time.DateTime
-import org.joda.time.format.DateTimeFormat
-
 def file = new File('../data/fells_loop.gpx')
 
 def slurper = new XmlSlurper()
@@ -18,7 +13,6 @@ gpx.rte.rtept.each {
   println it.@lat
   println it.@lon
 
-  def printableTime = new DateTime(it.time.toString())
-  def format = DateTimeFormat.forPattern('MM/dd/yyyy - hh:mm aa')
-  println printableTime.toString(format)
+  def parser = new DateParser()
+  println parser.parse(it.time.toString())
 }

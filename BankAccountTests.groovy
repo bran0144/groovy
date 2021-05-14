@@ -24,7 +24,13 @@ class BankAccountTests extends GroovyTestCase {
     }
   }
   def void testCanAccrueInterest() {
-    account.accrueInterest()
-    assert 11 == account.balance
+    def service = new MockFor(InterestRateService)
+    service.demand.getInterestRate{
+      return 0.10
+    }
+    service.use {
+      account.accrueInterest()
+      assert 11 == account.balance
+      }
     }
 }

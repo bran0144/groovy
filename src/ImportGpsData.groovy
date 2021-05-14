@@ -14,13 +14,11 @@ gpx.with {
   println attributes()['creator']
 }
 
+gpx.rte.rtept.each {
+	println it.@lat
+	println it.@lon
 
-//
-// gpx.rte.rtept.each {
-// 	println it.@lat
-// 	println it.@lon
-//
-// 	def parser = new DateParser()
-// 	println parser.parse(it.time.toString())
+	def parser = new DateParser()
+	println parser.parse(it.time.toString())
 
-// }
+}

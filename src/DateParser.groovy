@@ -8,8 +8,9 @@ class DateParser {
 		if (!time)
 			throw new IllegalArgumentException()
 
-		def printableTime = new DateTime(time)
-		def format = DateTimeFormat.forPattern('MM/dd/yyyy - hh:mm aa')
-		return printableTime.toString(format)
+    use(DateTimeCategory){
+		    def printableTime = new DateTime(time)
+        return printableTime.createPrintableTime()
+      }
 	}
 }

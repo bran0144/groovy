@@ -1,12 +1,11 @@
-@Grapes(
-	@Grab(group='joda-time', module='joda-time', version='2.3')
-)
+@Grab(group='joda-time', module='joda-time', version='2.10.9')
+
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
 
 class DateParser {
 	def String parse(time) {
-		if (time == null)
+		if (!time)
 			throw new IllegalArgumentException()
 
 		def printableTime = new DateTime(time)

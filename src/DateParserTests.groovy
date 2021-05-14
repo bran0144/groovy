@@ -1,6 +1,5 @@
-@Grapes(
-  @Grab(group='joda-time', module='joda-time', version='2.3')
-)
+@Grab(group='joda-time', module='joda-time', version='2.10.9')
+
 import org.joda.time.DateTime
 import groovy.util.GroovyTestCase
 

@@ -9,10 +9,12 @@ gpx.with {
 
   println desc
   println ''
+
+  println attributes()['version']
+  println attributes()['creator']
 }
 
-println gpx.@version
-println gpx.@creator
+
 //
 // gpx.rte.rtept.each {
 // 	println it.@lat

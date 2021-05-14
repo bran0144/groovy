@@ -7,4 +7,7 @@ class BankAccount {
   def void deposit(amount) {
     balance += amount
   }
+  def void withdrawl(amount) {
+    balance -= amount
+  }
 }

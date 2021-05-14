@@ -1,5 +1,5 @@
 class InterestRateService {
   def double getInterestRate(){
-    return 0.10
+    return 0.0
   }
 }

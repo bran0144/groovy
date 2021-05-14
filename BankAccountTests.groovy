@@ -1,4 +1,5 @@
 import groovy.util.GroovyTestCase
+import groovy.mock.interceptor.*
 
 class BankAccountTests extends GroovyTestCase {
 

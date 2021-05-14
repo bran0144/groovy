@@ -10,9 +10,10 @@ println gpx.@version
 println gpx.@creator
 
 gpx.rte.rtept.each {
-  println it.@lat
-  println it.@lon
+	println it.@lat
+	println it.@lon
 
-  def parser = new DateParser()
-  println parser.parse(it.time.toString())
+	def parser = new DateParser()
+	println parser.parse(it.time.toString())
+
 }

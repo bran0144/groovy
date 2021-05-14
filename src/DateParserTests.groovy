@@ -13,4 +13,10 @@ class DateParserTest extends GroovyTestCase {
 
     assert '01/01/2013 - 09:30 AM' == result
   }
+  def void testWillThrowAnErrorWhenNullDateTimeIsProvided() {
+    def parser = new DateParser()
+    shouldFail(IllegalArgumentException) {
+      parser.parse(null)
+    }
+  }
 }

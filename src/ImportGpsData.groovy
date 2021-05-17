@@ -23,7 +23,10 @@ gpx.with {
 }
 
 def forecastApi = new RESTClient('https://api.forecast.io/')
-def apiKey=''
+def credentialsFile = new File('credentials.groovy')
+def configSlurper = new ConfigSlurper()
+def credentials = configSlurper.parse(credentialsFile.toURL())
+
 gpx.rte.rtept.each {
 	println it.@lat
 	println it.@lon

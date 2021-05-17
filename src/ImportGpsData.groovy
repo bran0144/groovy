@@ -31,6 +31,8 @@ gpx.rte.rtept.each {
 	def parser = new DateParser()
 	println parser.parse(it.time.toString())
 
-  def queryString = "forecase/$apiKey/${it.@lat},${it.@lon},${it.time}"
-
+  def queryString = "forecast/$apiKey/${it.@lat},${it.@lon},${it.time}"
+  def reponse = forecastApi.get(path: queryString)
+  println "${response.data.currently.summary}"
+  println "${response.data.currently.temperature} degrees"
 }

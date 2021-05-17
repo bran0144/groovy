@@ -1,3 +1,11 @@
+@Grapes([
+  @Grab(
+    group='org.codehaus.groovy.modules.http-builder',
+    module='http-builder',
+    version='0.6')
+  ])
+import groovyx.net.http.RESTClient
+
 def file = new File('../data/fells_loop.gpx')
 
 def slurper = new XmlSlurper()
@@ -14,11 +22,15 @@ gpx.with {
   println attributes()['creator']
 }
 
+def forecastApi = new RESTClient('https://api.forecast.io/')
+def apiKey=''
 gpx.rte.rtept.each {
 	println it.@lat
 	println it.@lon
 
 	def parser = new DateParser()
 	println parser.parse(it.time.toString())
+
+  def queryString = "forecase/$apiKey/${it.@lat},${it.@lon},${it.time}"
 
 }

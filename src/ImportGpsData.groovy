@@ -43,5 +43,10 @@ gpx.rte.rtept.each {
   def reponse = forecastApi.get(path: queryString)
   println "${response.data.currently.summary}"
   println "${response.data.currently.temperature} degrees"
+
+  def routepoints = sql.dataSet("routepoints")
+  routepoints.add(latitude: it.@lat.toDouble(), longitutde: it.@lon.toDouble(),
+    timestep: new DateTime(it.time.toString()).toDate(),
+    temperature: response.data.currently.temperature)
 }
 sql.close()

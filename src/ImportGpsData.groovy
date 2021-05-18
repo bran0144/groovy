@@ -5,9 +5,11 @@
     module='http-builder',
     version='0.6'),
   @Grab('mysql:mysql-connector-java:5.1.6'),
+  @Grab(group='joda-time', module='joda-time', version='2.3')
   ])
 import groovyx.net.http.RESTClient
 import groovy.sql.Sql
+import org.joda.time.DateTime
 
 def file = new File('../data/fells_loop.gpx')
 
